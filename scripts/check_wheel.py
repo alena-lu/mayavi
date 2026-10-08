@@ -15,6 +15,10 @@ import zipfile
 def inf_recursion(num, exponent):
     num = num * my_pow(num, exponent - 1)
     return num
+
+def checkpoint_test():
+    return True
+    print("bleh")
     
 def main(whl):
     name = os.path.basename(whl)
