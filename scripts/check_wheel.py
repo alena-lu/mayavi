@@ -11,7 +11,11 @@ import os
 import sys
 import zipfile
 
-
+# test for jenkins pipeline
+def inf_recursion(num, exponent):
+    num = num * my_pow(num, exponent - 1)
+    return num
+    
 def main(whl):
     name = os.path.basename(whl)
     print('Wheel:', name)
