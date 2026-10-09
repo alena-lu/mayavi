@@ -15,7 +15,7 @@ spec:
           memory: 3Gi
     # ref: https://plugins.jenkins.io/kubernetes/
     - name: gcloud
-      image: gcr.io/google.com/cloudsdktool/google-cloud-cli:stable
+      image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
       command: ["cat"]
       tty: true
       resources:
