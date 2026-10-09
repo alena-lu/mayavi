@@ -1,5 +1,4 @@
 pipeline {
-  // make agent pod
   agent {
     kubernetes {
       yamlFile 'sonar-agent.yaml'
@@ -14,6 +13,7 @@ pipeline {
   environment {
     SONAR_HOST_URL = 'http://sonarqube-sonarqube.sonarqube.svc.cluster.local:9000'
     SONAR_TOKEN = credentials('sonar-token')
+    GOOGLE_CLOUD_PROJECT = 'course-project-alenalu'
   }
   // ref: https://docs.sonarsource.com/sonarqube-server/analyzing-source-code/
   stages {
@@ -34,7 +34,10 @@ pipeline {
 
     stage('Run Hadoop Job') {
       steps {
-        echo 'Quality gate passed: no Blocker/Critical/Major issues.'
+        sh 'git archive --format=tar HEAD -o mayavi-repo.tar'
+        container('gcloud') {
+          sh 'sh ci/run-hadoop.sh'
+        }
       }
     }
   }
