@@ -1,9 +1,6 @@
 # adding comment to test Jenkins pipeline
 # adding comment again to test
-
-def checkpoint_test():
-    return True
-    print("bleh")
+# project demo video
     
 """Sanity-check a built mayavi wheel (used by the Wheel CI workflow).
 
