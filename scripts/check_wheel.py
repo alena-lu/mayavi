@@ -1,5 +1,11 @@
 # adding comment to test Jenkins pipeline
 # adding comment again to test
+
+# test for jenkins pipeline
+def inf_recursion(num, exponent):
+    num = num * my_pow(num, exponent - 1)
+    return num
+    
 """Sanity-check a built mayavi wheel (used by the Wheel CI workflow).
 
 Checks that the wheel is pure Python but platform-tagged (manylinux on
